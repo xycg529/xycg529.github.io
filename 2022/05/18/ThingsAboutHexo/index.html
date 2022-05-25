@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="article">
@@ -353,9 +353,9 @@ mjx-container[display="true"] + br {
       
         <hr>
 <span id="more"></span>
-
 <p>这两天被Hexo各种各样的问题折磨坏了。</p>
-<p>起因是在原先Github Page的基础上加了个域名，然后莫名其妙网站的排版就乱了，找不到解决方法，遂推倒重来。</p>
+<p>起因是在原先Github
+Page的基础上加了个域名，然后莫名其妙网站的排版就乱了，找不到解决方法，遂推倒重来。</p>
 <p>将之前的Fluid主题换成了现在的NexT主题，虽然没有之前美观，但访问速度是上去了。</p>
 <p>然后又因为LateX公式的渲染的问题，以及莫名其妙的访问速度变慢，重开了不知道多少次，现在总结下出现的问题：</p>
 <p>因为NexT自带支持了MathJax，所以无需安装插件包。</p>
@@ -363,7 +363,6 @@ mjx-container[display="true"] + br {
 <p>这个问题需要安装插件<code>hexo-filter-mathjax</code>，问题就在于安装插件上。</p>
 <p>如果使用指令<code>npm install hexo-filter-mathjax --save</code>，可能会返回如下的提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">X moderate severity vulnerabilities.</span><br><span class="line"></span><br><span class="line">To address all issues, run:</span><br><span class="line">  npm audit fix</span><br><span class="line"></span><br><span class="line">Run `npm audit` for details.</span><br></pre></td></tr></table></figure>
-
 <p>尝试使用其建议的方法也都是类似的提示。</p>
 <p>解决方法是更换淘宝的镜像，感觉是经典的网络问题需要国内镜像解决。=_=||</p>
 <p>通过指令<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>安装<code>cnpm</code>，以后用<code>cnpm</code>代替<code>npm</code>安装插件更好。</p>
@@ -466,7 +465,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

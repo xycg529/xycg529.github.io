@@ -1,0 +1,1135 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="NY">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="article">
+<meta property="og:title" content="图">
+<meta property="og:url" content="http://xycg529.cn/2022/08/10/Graph/index.html">
+<meta property="og:site_name" content="NY&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph2.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph3.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph4.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph5.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph6.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph7.jpg">
+<meta property="og:image" content="http://xycg529.cn/imgs/graph7.jpg">
+<meta property="article:published_time" content="2022-08-10T14:21:25.623Z">
+<meta property="article:modified_time" content="2022-06-04T00:46:17.743Z">
+<meta property="article:author" content="NY">
+<meta property="article:tag" content="图">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://xycg529.cn/imgs/graph.jpg">
+  
+  
+  
+  <title>图 - NY&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xycg529.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>NY&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="图"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-10 22:21" pubdate>
+          2022年8月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          54 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">图</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <hr />
+<span id="more"></span>
+<h2 id="图的定义"><strong>图的定义</strong></h2>
+<p>图<span class="math inline">\(G\)</span>由顶点集<span
+class="math inline">\(V\)</span>和边集<span
+class="math inline">\(E\)</span>组成，记为<span
+class="math inline">\(G=(V,E)\)</span>，其中<span
+class="math inline">\(V(G)\)</span>表示图<span
+class="math inline">\(G\)</span>中顶点的有限非空集；<span
+class="math inline">\(E(G)\)</span>表示图<span
+class="math inline">\(G\)</span>中顶点之间的关系（边）集合。若<span
+class="math inline">\(V=\lbrace
+v_1,v_2,...,v_n\rbrace\)</span>，则用<span
+class="math inline">\(|V|\)</span>表示图<span
+class="math inline">\(G\)</span>中顶点的个数，也称图<span
+class="math inline">\(G\)</span>的阶，<span
+class="math inline">\(E=\lbrace (u,v)|u \in V, v\in V
+\rbrace\)</span>，用<span class="math inline">\(|E|\)</span>表示图<span
+class="math inline">\(G\)</span>中边的条数。</p>
+<hr />
+<p>注意：图必须是非空的，即<span
+class="math inline">\(V\)</span>一定是非空集。</p>
+<hr />
+<h3 id="无向图和有向图"><strong>无向图和有向图</strong></h3>
+<p>若<span
+class="math inline">\(E\)</span>是<strong>无向边（简称边）</strong>的有限集合时，则图<span
+class="math inline">\(G\)</span>为<strong>无向图</strong>。边是顶点的无序对，记为<span
+class="math inline">\((v,w)\)</span>或<span
+class="math inline">\((w,v)\)</span>，因为<span
+class="math inline">\((v,w)=(w,v)\)</span>。其中<span
+class="math inline">\(v,w\)</span>是顶点。可以说<span
+class="math inline">\(v\)</span>和<span
+class="math inline">\(w\)</span>互为邻接点。边<span
+class="math inline">\((v,w)\)</span>依附于顶点<span
+class="math inline">\(w\)</span>和<span
+class="math inline">\(v\)</span>，或者说边<span
+class="math inline">\((v,w)\)</span>和顶点<span
+class="math inline">\(v,w\)</span>相关联。</p>
+<p>若<span
+class="math inline">\(E\)</span>是<strong>有向边（也称弧）</strong>的有限集合时，则图<span
+class="math inline">\(G\)</span>为<strong>有向图</strong>。弧是顶点的有序对，记为<span
+class="math inline">\(&lt;v,w&gt;\)</span>,其中<span
+class="math inline">\(v,w\)</span>是顶点，<span
+class="math inline">\(v\)</span>称为<strong>弧尾</strong>，<span
+class="math inline">\(w\)</span>称为<strong>弧头</strong>，<span
+class="math inline">\(&lt;v,w&gt;\)</span>称为从顶点<span
+class="math inline">\(v\)</span>到顶点<span
+class="math inline">\(w\)</span>的弧，也称<span
+class="math inline">\(v\)</span>邻接到<span
+class="math inline">\(w\)</span>，或<span
+class="math inline">\(w\)</span>邻接自<span
+class="math inline">\(v\)</span>。<span
+class="math inline">\(&lt;v,w&gt;\not ={&lt;w,v&gt;}\)</span>。</p>
+<hr />
+<h3 id="简单图和多重图"><strong>简单图和多重图</strong></h3>
+<p>简单图——不存在重复边，不存在顶点到自身的边。</p>
+<p>多重图——某两个结点之间的边数多于一条，又允许顶点通过同一条边和自己关联。</p>
+<p><strong>数据结构只探讨简单图</strong>。</p>
+<hr />
+<h3 id="顶点的度"><strong>顶点的度</strong></h3>
+<p>对于无向图——顶点<span
+class="math inline">\(v\)</span>的度指的是依附于该顶点的边的条数，记为<span
+class="math inline">\(TD(v)\)</span>。</p>
+<p>有<span class="math inline">\(n\)</span>个顶点<span
+class="math inline">\(e\)</span>条边的无向图中，</p>
+<p><span class="math display">\[
+\sum _{i=1}^{n}TD(v_i)=2e
+\]</span></p>
+<p>对于有向图——入度是以顶点<span
+class="math inline">\(v\)</span>为终点的有向边的数目，记为<span
+class="math inline">\(ID(v)\)</span>。出度是以顶点<span
+class="math inline">\(v\)</span>为起点的有向边的数目，记为<span
+class="math inline">\(OD(v)\)</span>。顶点<span
+class="math inline">\(v\)</span>的度等于其入度和出度之和，<span
+class="math inline">\(TD(v)=ID(v)+OD(v)\)</span>。</p>
+<p>有<span class="math inline">\(n\)</span>个顶点<span
+class="math inline">\(e\)</span>条边的有向图中，</p>
+<p><span class="math display">\[
+\sum _{i=1}^{n}ID(v_i)=\sum _{i=1}^{n}OD(v_i)=e
+\]</span></p>
+<hr />
+<h3 id="顶点之间的关系描述"><strong>顶点之间的关系描述</strong></h3>
+<p>路径——顶点<span class="math inline">\(v_p\)</span>到<span
+class="math inline">\(v_q\)</span>之间的一条路径是指顶点序列<span
+class="math inline">\(v_p,...,v_q\)</span>。</p>
+<p><strong>顶点之间也有可能不存在路径，在有向图中路径也是有方向的。</strong></p>
+<p>回路（环）——第一个顶点和最后一个顶点相同的路径。</p>
+<p>简单路径——顶点不重复出现的路径。</p>
+<p>简单回路——除第一个顶点和最后一个顶点外其余顶点不重复出现的回路。</p>
+<p>路径长度——路径上边的数目。</p>
+<p>点到点的距离——两点之间存在的最短路径的长度。若不存在则距离为<span
+class="math inline">\(\infty\)</span>。</p>
+<hr />
+<p>连通——无向图中若两点之间存在路径则连通，有向图中若两点之间存在两个方向的路径则称为强连通。</p>
+<p>若无向图<strong>任意</strong>两个顶点连通则称为连通图，若有向图<strong>任意</strong>两个顶点强连通则称强连通图，否则称为非连通图。</p>
+<p>对于<span class="math inline">\(n\)</span>个顶点的无向图<span
+class="math inline">\(G\)</span>，若是连通图至少要<span
+class="math inline">\(n-1\)</span>条边。若是非连通图最多可有<span
+class="math inline">\(C_{n-1}^{2}\)</span>条边。</p>
+<p>对于<span class="math inline">\(n\)</span>个顶点的有向图<span
+class="math inline">\(G\)</span>，若是强连通图至少要<span
+class="math inline">\(n\)</span>条边（形成回路）。</p>
+<hr />
+<p>子图——设有两个图<span class="math inline">\(G=(V,E)\)</span>和<span
+class="math inline">\(G&#39;=(V&#39;,E&#39;)\)</span>，若<span
+class="math inline">\(V&#39;\)</span>是<span
+class="math inline">\(V\)</span>的子集，且<span
+class="math inline">\(E&#39;\)</span>是<span
+class="math inline">\(E\)</span>的子集，则<span
+class="math inline">\(G&#39;\)</span>是<span
+class="math inline">\(G\)</span>的子图。<strong>并非任意挑选几个点几条边就可以构成子图。</strong></p>
+<p>生成子图——若有满足<span
+class="math inline">\(V(G&#39;)=V(G)\)</span>的子图<span
+class="math inline">\(G&#39;\)</span>，则称其为<span
+class="math inline">\(G\)</span>的生成子图。</p>
+<p>连通分量——无向图中极大连通子图称为连通分量。</p>
+<p>强连通分量——有向图中的极大强连通子图称为强连通分量。</p>
+<p>比如下图所示：</p>
+<p><img src="/imgs/graph.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/imgs/graph2.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>生成树——连通图的生成树是包含图中全部顶点的一个极小连通子图。</p>
+<p>若图中顶点数为<span
+class="math inline">\(n\)</span>，则它的生成树有<span
+class="math inline">\(n-1\)</span>条边。对生成树而言，减去一条边会变成非连通图，加上一条边会形成一个回路。</p>
+<p><img src="/imgs/graph3.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>在非连通图中，连通分量的生成树构成了非连通图的生成森林。</p>
+<p><img src="/imgs/graph4.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>带权图（网）——边上有权值的图。</p>
+<p>带权路径长度——一条路径上所有边的权值之和。</p>
+<hr />
+<h3 id="特殊形态的图"><strong>特殊形态的图</strong></h3>
+<p>无向完全图——无向图中任意两个顶点都有边。</p>
+<p>若无向图的顶点数<span class="math inline">\(|V|=n\)</span>，则<span
+class="math inline">\(|E|\in
+[0,C_{n}^2]=[0,\frac{n(n-1)}{2}]\)</span>。</p>
+<p>有向完全图——有向图中任意两个顶点都存在方向相反的弧。</p>
+<p>若有向图的顶点数<span class="math inline">\(|V|=n\)</span>，则<span
+class="math inline">\(|E|\in [0,2C_{n}^2]=[0,n(n-1)]\)</span>。</p>
+<hr />
+<p>稀疏图——边很少。</p>
+<p>稠密图——边很多。</p>
+<p>多少没有绝对的界限，一般<span class="math inline">\(|E|&lt;|V|\log
+|V|\)</span>时可以视为稀疏图。</p>
+<p>树——不存在回路且连通的无向图。</p>
+<p><span class="math inline">\(n\)</span>个顶点的数必有<span
+class="math inline">\(n-1\)</span>条边。</p>
+<p><span class="math inline">\(n\)</span>个顶点的图，若<span
+class="math inline">\(|E|&gt;n-1\)</span>则一定有回路。</p>
+<p>有向树——一个顶点的入度为<span
+class="math inline">\(0\)</span>，其余顶点入度均为<span
+class="math inline">\(1\)</span>的有向图。</p>
+<h2 id="图的基本操作"><strong>图的基本操作</strong></h2>
+<ol type="1">
+<li><p><code>Adjacent(G,x,y)</code>：判断图<span
+class="math inline">\(G\)</span>是否存在边<span
+class="math inline">\(&lt;x,y&gt;\)</span>或<span
+class="math inline">\((x,y)\)</span>。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：<code>G[x][y]==0?</code>，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：顶点<span
+class="math inline">\(x\)</span>的边结点中是否含有<span
+class="math inline">\(y\)</span>，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="2" type="1">
+<li><p><code>Neighbors(G,x)</code>：列出图<span
+class="math inline">\(G\)</span>中与结点<span
+class="math inline">\(x\)</span>邻接的边。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：顶点所在行或列的所有非零元素。<span
+class="math inline">\(O(|V|)\)</span></p></li>
+<li><p>有向图：遍历当前顶点所在行找非零元素为<strong>出边</strong>，<span
+class="math inline">\(O(|V|)\)</span>。遍历当前顶点所在列找非零元素为<strong>入边</strong>，<span
+class="math inline">\(O(|V|)\)</span></p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：遍历其中一个顶点<span
+class="math inline">\(x\)</span>的边结点，<span
+class="math inline">\(O(1)\sim O(|V|)\)</span></p></li>
+<li><p>有向图：找<strong>出边</strong>与无向图相同，找<strong>入边</strong>需要遍历整个表，<span
+class="math inline">\(O(|E|)\)</span></p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="3" type="1">
+<li><p><code>InsertVertex(G,x)</code>：从图<span
+class="math inline">\(G\)</span>中插入顶点<span
+class="math inline">\(x\)</span>。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：新增一行一列数据，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：新增一个结点，指针域指向<code>NULL</code>，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同</p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="4" type="1">
+<li><p><code>DeleteVertex(G,x)</code>：从图<span
+class="math inline">\(G\)</span>中删除顶点<span
+class="math inline">\(x\)</span>。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：顶点所在行列元素清零，<span
+class="math inline">\(O(|V|)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：删除该顶点，并删除其他顶点的边结点中相同的结点，<span
+class="math inline">\(O(1)\sim O(|E|)\)</span></p></li>
+<li><p>有向图：删除<strong>出边</strong>需要把当前结点指向的边结点也删除，<span
+class="math inline">\(O(1)\)</span>。删除<strong>入边</strong>需要遍历整个表，<span
+class="math inline">\(O(|E|)\)</span></p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="5" type="1">
+<li><p><code>AddEdge(G,x,y)</code>：若无向边<span
+class="math inline">\((x,y)\)</span>或有向边<span
+class="math inline">\(&lt;x,y&gt;\)</span>不存在，则向图<span
+class="math inline">\(G\)</span>中添加该边。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：<code>G[x][y]=1</code>，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：在两个顶点后的边结点中加入新结点，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="6" type="1">
+<li><code>RemoveEdge(G,x,y)</code>：若无向边<span
+class="math inline">\((x,y)\)</span>或有向边<span
+class="math inline">\(&lt;x,y&gt;\)</span>存在，则向图<span
+class="math inline">\(G\)</span>中删除该边。</li>
+</ol>
+<hr />
+<ol start="7" type="1">
+<li><p><code>FirstNeighbor(G,x)</code>：求图<span
+class="math inline">\(G\)</span>中顶点<span
+class="math inline">\(x\)</span>的第一个邻接点，若有则返回顶点号。没有邻接点或图中不存在<span
+class="math inline">\(x\)</span>则返回<span
+class="math inline">\(-1\)</span>。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：遍历顶点<span
+class="math inline">\(x\)</span>所在行找出第一个非零元素，<span
+class="math inline">\(O(1)\sim O(|V|)\)</span></p></li>
+<li><p>有向图：找<strong>出边</strong>遍历所在行的第一个非零元素，<span
+class="math inline">\(O(1)\sim
+O(|V|)\)</span>。找<strong>入边</strong>遍历所在列的第一个非零元素，<span
+class="math inline">\(O(1)\sim O(|V|)\)</span></p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：只需要访问当前顶点指向边结点的第一个顶点，<span
+class="math inline">\(O(1)\)</span></p></li>
+<li><p>有向图：找<strong>出边</strong>与无向图相同。找<strong>入边</strong>需要遍历整个表，时间复杂度<span
+class="math inline">\(O(1)\sim
+O(|E|)\)</span>。但找<strong>入边</strong>不常用。</p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="8" type="1">
+<li><p><code>NextNeighbor(G,x,y)</code>：假设图<span
+class="math inline">\(G\)</span>中顶点<span
+class="math inline">\(y\)</span>是顶点<span
+class="math inline">\(x\)</span>的一个邻接点，返回除<span
+class="math inline">\(y\)</span>之外顶点的下一个邻接点的顶点号，若<span
+class="math inline">\(y\)</span>是<span
+class="math inline">\(x\)</span>的最后一个邻接点，则返回<span
+class="math inline">\(-1\)</span>。</p>
+<p>邻接矩阵：</p>
+<ol type="1">
+<li><p>无向图：遍历顶点<span
+class="math inline">\(x\)</span>所在行的下一个非零元素。<span
+class="math inline">\(O(1)\sim O(|V|)\)</span></p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol>
+<p>邻接表：</p>
+<ol type="1">
+<li><p>无向图：只需找边结点第一个结点的下一个结点。<span
+class="math inline">\(O(1)\)</span> 。</p></li>
+<li><p>有向图：与无向图相同。</p></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="9" type="1">
+<li><p><code>Get_edge_value(G,x,y)</code>：获取图<span
+class="math inline">\(G\)</span>中边<span
+class="math inline">\((x,y)\)</span>或<span
+class="math inline">\(&lt;x,y&gt;\)</span>对应的权值。</p>
+<p>时间复杂度取决于<code>Adjacent(G,x,y)</code>。</p></li>
+</ol>
+<hr />
+<ol start="10" type="1">
+<li><p><code>Set_edge_value(G,x,y,v)</code>：设置图<span
+class="math inline">\(G\)</span>中边<span
+class="math inline">\((x,y)\)</span>或<span
+class="math inline">\(&lt;x,y&gt;\)</span>对应的权值为<span
+class="math inline">\(v\)</span>。</p>
+<p>时间复杂度取决于<code>Adjacent(G,x,y)</code>。</p></li>
+</ol>
+<hr />
+<h3 id="图的遍历"><strong>图的遍历</strong></h3>
+<h4 id="广度优先遍历bfs"><strong>广度优先遍历<span
+class="math inline">\((BFS)\)</span></strong></h4>
+<p>树不存在回路，因此搜索相邻结点时不可能搜到已经访问过的结点。</p>
+<p>图搜索相邻顶点时，也可能搜到已经访问过的结点。</p>
+<ol type="1">
+<li><p>找到与一个顶点相邻的所有顶点。</p>
+<p>需要已经定义实现的两个基本操作<code>FirstNeighbor(G,x)</code>和<code>NextNeighbor(G,x,y)</code>。</p></li>
+<li><p>标记哪些顶点被访问过。</p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> visited[MAX_VERTEX_NUM];<br></code></pre></td></tr></table></figure></p></li>
+<li><p>需要一个辅助队列。</p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> visited[MAX_VERTEX_NUM]; <span class="hljs-comment">// 访问标记数组</span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">BFS</span><span class="hljs-params">(Graph G,<span class="hljs-type">int</span> v)</span>&#123; <span class="hljs-comment">// 从顶点v出发广搜图G</span><br>    visit(v); <span class="hljs-comment">// 访问初始顶点v</span><br>    visited[v]=TRUE; <span class="hljs-comment">// 对v做已访问标记</span><br>    EnQueue(Q,v); <span class="hljs-comment">// 顶点v入队Q</span><br>    <span class="hljs-keyword">while</span>(isEmpty(Q))&#123;<br>        DeQueue(Q,v); <span class="hljs-comment">// 顶点出队</span><br>        <span class="hljs-keyword">for</span>(w=FirstNeighbor(G,v);w&gt;=<span class="hljs-number">0</span>;w=NextNeighbor(G,v,w))<br>        <span class="hljs-comment">// 检测v的所有邻接点</span><br>        <span class="hljs-keyword">if</span>(!visited[w])&#123;<br>            visit(w); <span class="hljs-comment">// 访问顶点w</span><br>            visited[w]=TRUE; <span class="hljs-comment">// 对w做已访问标记</span><br>            EnQueue(Q,w); <span class="hljs-comment">// 顶点w入队</span><br>        &#125;<span class="hljs-comment">//if</span><br>    &#125;<span class="hljs-comment">//while</span><br>&#125;<br><br><span class="hljs-comment">// 防止出现非连通图无法遍历完所有结点的情况</span><br><span class="hljs-comment">// 对图G进行宽搜</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">BFSTraverse</span><span class="hljs-params">(Graph G)</span>&#123; <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;G.vexnum;i++)<br>        visited[i]=FALSE; <span class="hljs-comment">// 标记数组初始化</span><br>    InitQueue(Q); <span class="hljs-comment">// 初始化辅助队列Q</span><br>    <span class="hljs-comment">// 从0号顶点开始遍历，对每个连通分量调用一次BFS</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;G.vexnum;i++) <br>        <span class="hljs-keyword">if</span>(!visited[i])<br>            BFS(G,i); <span class="hljs-comment">// vi从未访问过，从vi开始BFS</span><br>&#125;<br></code></pre></td></tr></table></figure></p></li>
+</ol>
+<p>同一个图的邻接矩阵表示方式唯一，因此<span
+class="math inline">\(BFS\)</span>序列唯一。</p>
+<p>同一个图的邻接表表示方式不唯一，因此<span
+class="math inline">\(BFS\)</span>序列不唯一。</p>
+<p>对于无向图，调用<code>BFS</code>函数的次数<span
+class="math inline">\(=\)</span>连通分量数。</p>
+<p>对于有向图，调用次数需要具体分析。若起始顶点到其他各顶点都有路径则只需调用一次。</p>
+<hr />
+<h5 id="复杂度分析"><strong>复杂度分析</strong></h5>
+<p>空间复杂度：最坏情况下辅助队列大小为<span
+class="math inline">\(O(|V|)\)</span>。</p>
+<p>时间复杂度<span
+class="math inline">\(=\)</span>访问各结点所需时间<span
+class="math inline">\(+\)</span>探索各条边所需时间</p>
+<p>用邻接矩阵存储，访问<span
+class="math inline">\(|V|\)</span>个顶点需要<span
+class="math inline">\(O(|V|)\)</span>的时间。查找每个顶点的邻接点都需要<span
+class="math inline">\(O(|V|)\)</span>的时间，总有<span
+class="math inline">\(|V|\)</span>个顶点，因此时间复杂度<span
+class="math inline">\(O(|V|^2)\)</span>。</p>
+<p>用邻接表存储，访问<span
+class="math inline">\(|V|\)</span>个顶点需要<span
+class="math inline">\(O(|V|)\)</span>的时间。查找每个顶点的邻接点都需要<span
+class="math inline">\(O(|E|)\)</span>的时间，因此时间复杂度<span
+class="math inline">\(O(|V|+|E|)\)</span>。</p>
+<hr />
+<h5 id="广度优先生成树"><strong>广度优先生成树</strong></h5>
+<p>根据<span
+class="math inline">\(BFS\)</span>得到的树，顶点之间的边都是顶点第一次被访问时的边。</p>
+<p><img src="/imgs/graph5.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/imgs/graph6.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr />
+<h5 id="广度优先生成森林"><strong>广度优先生成森林</strong></h5>
+<p><img src="/imgs/graph7.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr />
+<h4 id="深度优先遍历dfs"><strong>深度优先遍历<span
+class="math inline">\((DFS)\)</span></strong></h4>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> visited[MAX_VERTEX_NUM]; <span class="hljs-comment">// 访问标记数组</span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">DFS</span><span class="hljs-params">(Graph G,<span class="hljs-type">int</span> v)</span>&#123; <span class="hljs-comment">// 从顶点v出发深搜图G</span><br>    visit(v); <span class="hljs-comment">// 访问初始顶点v</span><br>    visited[v]=TRUE; <span class="hljs-comment">// 对v做已访问标记</span><br>    <span class="hljs-keyword">for</span>(w=FirstNeighbor(G,v);w&gt;=<span class="hljs-number">0</span>;w=NextNeighbor(G,v,w))<br>        <span class="hljs-comment">// 检测w为G的尚未访问的邻接顶点</span><br>        <span class="hljs-keyword">if</span>(!visited[w])<br>            DFS(G,w);<br>&#125;<br><br><span class="hljs-comment">// 防止出现非连通图无法遍历完所有结点的情况</span><br><span class="hljs-comment">// 对图G进行深搜</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">DFSTraverse</span><span class="hljs-params">(Graph G)</span>&#123; <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;G.vexnum;i++)<br>        visited[i]=FALSE; <span class="hljs-comment">// 标记数组初始化</span><br>    <span class="hljs-comment">// 从0号顶点开始遍历，对每个连通分量调用一次DFS</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;G.vexnum;i++) <br>        <span class="hljs-keyword">if</span>(!visited[i])<br>            DFS(G,i); <span class="hljs-comment">// vi从未访问过，从vi开始DFS</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>同一个图的邻接矩阵表示方式唯一，因此<span
+class="math inline">\(DFS\)</span>序列唯一。</p>
+<p>同一个图的邻接表表示方式不唯一，因此<span
+class="math inline">\(DFS\)</span>序列不唯一。</p>
+<p>对于无向图，调用<code>DFS</code>函数的次数<span
+class="math inline">\(=\)</span>连通分量数。</p>
+<p>对于有向图，调用次数需要具体分析。若起始顶点到其他各顶点都有路径则只需调用一次。</p>
+<hr />
+<h5 id="复杂度分析-1"><strong>复杂度分析</strong></h5>
+<p>空间复杂度：最坏情况下函数调用栈的递归深度为<span
+class="math inline">\(O(|V|)\)</span>。最好情况<span
+class="math inline">\(O(1)\)</span>。</p>
+<p>时间复杂度<span
+class="math inline">\(=\)</span>访问各结点所需时间<span
+class="math inline">\(+\)</span>探索各条边所需时间</p>
+<p>用邻接矩阵存储，访问<span
+class="math inline">\(|V|\)</span>个顶点需要<span
+class="math inline">\(O(|V|)\)</span>的时间。查找每个顶点的邻接点都需要<span
+class="math inline">\(O(|V|)\)</span>的时间，总有<span
+class="math inline">\(|V|\)</span>个顶点，因此时间复杂度<span
+class="math inline">\(O(|V|^2)\)</span>。</p>
+<p>用邻接表存储，访问<span
+class="math inline">\(|V|\)</span>个顶点需要<span
+class="math inline">\(O(|V|)\)</span>的时间。查找每个顶点的邻接点都需要<span
+class="math inline">\(O(|E|)\)</span>的时间，因此时间复杂度<span
+class="math inline">\(O(|V|+|E|)\)</span>。</p>
+<hr />
+<h5 id="深度优先生成树"><strong>深度优先生成树</strong></h5>
+<p>根据<span
+class="math inline">\(DFS\)</span>得到的树，顶点之间的边都是顶点第一次被访问时的边。</p>
+<hr />
+<h5 id="深度优先生成森林"><strong>深度优先生成森林</strong></h5>
+<p><img src="/imgs/graph7.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr />
+<h2
+id="最小生成树最小代价树"><strong>最小生成树（最小代价树）</strong></h2>
+<p>对于一个带权连通无向图<span
+class="math inline">\(G=(V,E)\)</span>，生成树不同，每棵树的权也可能不同。设<span
+class="math inline">\(R\)</span>为<span
+class="math inline">\(G\)</span>的所有生成树的集合，若<span
+class="math inline">\(T\)</span>为<span
+class="math inline">\(R\)</span>中边的权值之和最小的生成树，则<span
+class="math inline">\(T\)</span>称为<span
+class="math inline">\(G\)</span>的最小生成树<span
+class="math inline">\((Minimum-Spanning-Tree,MST)\)</span>。</p>
+<p>最小生成树可能有多个，但边的权值之和总是唯一且最小的。</p>
+<p>最小生成树的边数<span class="math inline">\(=\)</span>顶点数<span
+class="math inline">\(-1\)</span>。砍掉一条则不连通，增加一条边则会出现回路。</p>
+<p>如果一个连通图本身就是一棵树，则其最小生成树就是本身。</p>
+<p>只有连通图才有生成树，非连通图只有生成森林。</p>
+<h3 id="prim普里姆算法"><strong><span
+class="math inline">\(Prim\)</span>（普里姆）算法</strong></h3>
+<p>从某一个顶点开始构建生成树，每次将代价最小的新顶点纳入生成树，直到所有顶点都纳入为止。</p>
+<p>时间复杂度<span
+class="math inline">\(O(|V|^2)\)</span>，适合用于边稠密图。</p>
+<h3 id="kruskal克鲁斯卡尔算法"><strong><span
+class="math inline">\(Kruskal\)</span>（克鲁斯卡尔）算法</strong></h3>
+<p>每次选择一条权值最小的边，使这条边的两头连通（若已连通就不选），直到所有结点都连通。</p>
+<p>时间复杂度<span class="math inline">\(O(|E|\log
+_{2}|E|)\)</span>，适合用于边稀疏图。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9B%BE/">#图</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>图</div>
+      <div>http://xycg529.cn/2022/08/10/Graph/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>NY</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年8月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/08/10/HuffmanTree/" title="哈夫曼树">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">哈夫曼树</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/10/ForLinkList/" title="循环链表">
+                        <span class="hidden-mobile">循环链表</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

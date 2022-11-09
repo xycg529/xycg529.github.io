@@ -204,31 +204,6 @@
   
   
   <entry>
-    <title>栈</title>
-    <link href="/2022/08/10/Stack/"/>
-    <url>/2022/08/10/Stack/</url>
-    
-    <content type="html"><![CDATA[<hr /><span id="more"></span><h2 id="栈的定义"><strong>栈的定义</strong></h2><p>栈是<strong>只允许在一端进行插入或删除操作</strong>的线性表，逻辑结构与普通线性表相同，只在插入删除操作上与区别。</p><p>重要术语：栈顶，栈底，空栈。</p><p>只能从栈顶插入或删除元素。</p><h2 id="栈的特点"><strong>栈的特点</strong></h2><p>Last In First Out (LIFO) - 后进先出</p><h2 id="栈的基本操作"><strong>栈的基本操作</strong></h2><ol type="1"><li><p><code>InitStack(&amp;S)</code>：构造一个空栈<spanclass="math inline">\(S\)</span>并分配内存空间。</p></li><li><p><code>DestroyStack(&amp;S)</code>：销毁并释放栈<spanclass="math inline">\(S\)</span>所占用的内存空间。</p></li><li><p><code>Push(&amp;S,x)</code>：在栈<spanclass="math inline">\(S\)</span>未满的情况下插入元素<spanclass="math inline">\(x\)</span>使其成为新栈顶。</p></li><li><p><code>Pop(&amp;s,&amp;x)</code>：若栈<spanclass="math inline">\(S\)</span>非空弹出栈顶元素并用<spanclass="math inline">\(x\)</span>返回。</p></li><li><p><code>GetTop(S,&amp;x)</code>：若栈<spanclass="math inline">\(S\)</span>非空则用<spanclass="math inline">\(x\)</span>返回栈顶元素。</p></li><li><p><code>StackEmpty(S)</code>：栈<spanclass="math inline">\(S\)</span>为空返回<spanclass="math inline">\(true\)</span>，反之<spanclass="math inline">\(false\)</span>。</p></li></ol><h2 id="栈的常考题型"><strong>栈的常考题型</strong></h2><p>根据进栈顺序写出合法的出栈顺序。</p><p>例如有进栈顺序<span class="math inline">\(a\rightarrow b\rightarrowc\rightarrow d\rightarrow e\)</span>，写出合法的出栈顺序。</p><p>当进栈和出栈没有穿插进行时，只能有一种合法出栈顺序<spanclass="math inline">\(e\rightarrow d\rightarrow c\rightarrowb\rightarrow a\)</span>。</p><p>当进栈和出栈穿插进行时，可能会产生的一种合法出栈顺序如下：</p><ol type="1"><li><p>先入栈<span class="math inline">\(a,b\)</span>，再出栈<spanclass="math inline">\(b\)</span>，此时栈内还剩下<spanclass="math inline">\(a\)</span>，出栈为<spanclass="math inline">\(b\)</span>。</p></li><li><p>再插入<spanclass="math inline">\(c,d,e\)</span>，再依次出栈直至空栈。此时出栈为<spanclass="math inline">\(b\rightarrow e\rightarrow d\rightarrowc\rightarrow a\)</span>。</p></li></ol><p>结论：<spanclass="math inline">\(n\)</span>个不同元素进栈，出栈元素不同排列的个数为<spanclass="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span>（卡特兰数），不要求掌握证明。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>数据结构</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>栈</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>排序</title>
     <link href="/2022/08/10/Sort/"/>
     <url>/2022/08/10/Sort/</url>
@@ -246,6 +221,31 @@
     <tags>
       
       <tag>排序</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>栈</title>
+    <link href="/2022/08/10/Stack/"/>
+    <url>/2022/08/10/Stack/</url>
+    
+    <content type="html"><![CDATA[<hr /><span id="more"></span><h2 id="栈的定义"><strong>栈的定义</strong></h2><p>栈是<strong>只允许在一端进行插入或删除操作</strong>的线性表，逻辑结构与普通线性表相同，只在插入删除操作上与区别。</p><p>重要术语：栈顶，栈底，空栈。</p><p>只能从栈顶插入或删除元素。</p><h2 id="栈的特点"><strong>栈的特点</strong></h2><p>Last In First Out (LIFO) - 后进先出</p><h2 id="栈的基本操作"><strong>栈的基本操作</strong></h2><ol type="1"><li><p><code>InitStack(&amp;S)</code>：构造一个空栈<spanclass="math inline">\(S\)</span>并分配内存空间。</p></li><li><p><code>DestroyStack(&amp;S)</code>：销毁并释放栈<spanclass="math inline">\(S\)</span>所占用的内存空间。</p></li><li><p><code>Push(&amp;S,x)</code>：在栈<spanclass="math inline">\(S\)</span>未满的情况下插入元素<spanclass="math inline">\(x\)</span>使其成为新栈顶。</p></li><li><p><code>Pop(&amp;s,&amp;x)</code>：若栈<spanclass="math inline">\(S\)</span>非空弹出栈顶元素并用<spanclass="math inline">\(x\)</span>返回。</p></li><li><p><code>GetTop(S,&amp;x)</code>：若栈<spanclass="math inline">\(S\)</span>非空则用<spanclass="math inline">\(x\)</span>返回栈顶元素。</p></li><li><p><code>StackEmpty(S)</code>：栈<spanclass="math inline">\(S\)</span>为空返回<spanclass="math inline">\(true\)</span>，反之<spanclass="math inline">\(false\)</span>。</p></li></ol><h2 id="栈的常考题型"><strong>栈的常考题型</strong></h2><p>根据进栈顺序写出合法的出栈顺序。</p><p>例如有进栈顺序<span class="math inline">\(a\rightarrow b\rightarrowc\rightarrow d\rightarrow e\)</span>，写出合法的出栈顺序。</p><p>当进栈和出栈没有穿插进行时，只能有一种合法出栈顺序<spanclass="math inline">\(e\rightarrow d\rightarrow c\rightarrowb\rightarrow a\)</span>。</p><p>当进栈和出栈穿插进行时，可能会产生的一种合法出栈顺序如下：</p><ol type="1"><li><p>先入栈<span class="math inline">\(a,b\)</span>，再出栈<spanclass="math inline">\(b\)</span>，此时栈内还剩下<spanclass="math inline">\(a\)</span>，出栈为<spanclass="math inline">\(b\)</span>。</p></li><li><p>再插入<spanclass="math inline">\(c,d,e\)</span>，再依次出栈直至空栈。此时出栈为<spanclass="math inline">\(b\rightarrow e\rightarrow d\rightarrowc\rightarrow a\)</span>。</p></li></ol><p>结论：<spanclass="math inline">\(n\)</span>个不同元素进栈，出栈元素不同排列的个数为<spanclass="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span>（卡特兰数），不要求掌握证明。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>栈</tag>
       
     </tags>
     

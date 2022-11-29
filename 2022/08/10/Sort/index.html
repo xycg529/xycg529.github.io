@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://xycg529.cn/imgs/sort20.jpg">
 <meta property="og:image" content="https://xycg529.cn/imgs/sort21.jpg">
 <meta property="article:published_time" content="2022-08-10T14:21:25.970Z">
-<meta property="article:modified_time" content="2022-06-10T01:12:47.769Z">
+<meta property="article:modified_time" content="2022-11-24T06:52:12.132Z">
 <meta property="article:author" content="NY">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
@@ -328,7 +328,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月10日 上午
+                    本文最后更新于：2022年11月24日 下午
                   
                 
               </p>
@@ -444,9 +444,9 @@ class="math inline">\(&lt;\)</span>左、右孩子。</p>
 class="math inline">\(2i\)</span>，右孩子<span
 class="math inline">\(2i+1\)</span>，父节点<span
 class="math inline">\(\lfloor i\div 2\rfloor\)</span>。</p>
-<p>建立大根堆——把所有非终端结点（<span
-class="math inline">\(i&lt;\lfloor n\div
-2\rfloor\)</span>）从后往前都检查一遍，检查当前结点是否满足大根堆的要求，若不满足则将当前结点与更大的一个孩子互换。</p>
+<p>建立大根堆——把所有非终端结点（从<span class="math inline">\(i=\lfloor
+n\div
+2\rfloor\)</span>开始）从后往前都检查一遍，检查当前结点是否满足大根堆的要求，若不满足则将当前结点与更大的一个孩子互换。</p>
 <p>更小的元素下移可能造成下一层子树不符合大根堆的要求，则需要继续更换。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 以k为根的子树调整大根堆</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">HeadAdjust</span><span class="hljs-params">(<span class="hljs-type">int</span> A[],<span class="hljs-type">int</span> k,<span class="hljs-type">int</span> len)</span>&#123;<br>    A[<span class="hljs-number">0</span>]=A[k]; <span class="hljs-comment">// 暂存子树根结点</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>*k;i&lt;=len;i*=<span class="hljs-number">2</span>)&#123; <span class="hljs-comment">// 沿key较大的子结点向下筛选</span><br>        <span class="hljs-keyword">if</span>(i&lt;len&amp;&amp;A[i]&lt;A[i+<span class="hljs-number">1</span>])<br>            i++; <span class="hljs-comment">// 取较大的子结点的下标</span><br>        <span class="hljs-keyword">if</span>(A[<span class="hljs-number">0</span>]&gt;=A[i]) <span class="hljs-keyword">break</span>; <span class="hljs-comment">// 筛选结束</span><br>        <span class="hljs-keyword">else</span>&#123;<br>            A[k]=A[i]; <span class="hljs-comment">//将A[i]调整到双亲结点上</span><br>            k=i; <span class="hljs-comment">// 修改k以便继续向下筛选</span><br>        &#125;<br>    &#125;<br>    A[k]=A[<span class="hljs-number">0</span>]; <span class="hljs-comment">// 被筛选结点的值放入最终位置</span><br>&#125;<br><br><span class="hljs-comment">// 建立大根堆</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">BuildMaxHeap</span><span class="hljs-params">(<span class="hljs-type">int</span> A[],<span class="hljs-type">int</span> len)</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=len/<span class="hljs-number">2</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>        HeadAdjust(A,len);<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>堆排序：每一次将堆顶元素加入有序子序列（与待排序序列中的最后一个元素交换），并将待排元素序列再次调整为大根堆（小元素不断下移）。</p>
@@ -691,7 +691,7 @@ class="math inline">\((k-1)-u\)</span>个虚段。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月10日</div>
+          <div>2022年11月24日</div>
         </div>
       
       

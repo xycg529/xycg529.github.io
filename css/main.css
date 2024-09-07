@@ -1426,7 +1426,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff09de;
+  background: #ff75b4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2878,7 +2878,7 @@ body {
 }
 pre,
 code {
-  font-family: Courier New, Menlo, consolas, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: Consolas, Menlo, Courier New, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 .brand {
   background: rgba(0,0,0,0);

@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang=zh>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:normal,bold">
+<link rel="stylesheet" type="text/css" href="https://fonts.font.im/css?family=Fira+Code:normal,bold">
+
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"xycg529.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="来源：黑马程序员JavaWeb中MySQL部分的讲解 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基础语句学习记录">
@@ -33,281 +23,287 @@
 <meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="开发">
 <meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://xycg529.github.io/Quick-Study-MySQL/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://xycg529.github.io/Quick-Study-MySQL/","path":"Quick-Study-MySQL/","title":"MySQL基础语句学习记录"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>MySQL基础语句学习记录 | NY's Blog</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">NY's Blog</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</header>
+    
+    
+      
         
-  
-  <aside class="sidebar">
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>MySQL基础语句学习记录</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
       </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <!-- <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <!-- <span id="i-share" class="info" style="display:none;">分享文章</span> -->
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xycg529.github.io/Quick-Study-MySQL/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xycg529.github.io/Quick-Study-MySQL/&text=MySQL基础语句学习记录"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xycg529.github.io/Quick-Study-MySQL/&is_video=false&description=MySQL基础语句学习记录"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL基础语句学习记录&body=Check out this article: http://xycg529.github.io/Quick-Study-MySQL/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xycg529.github.io/Quick-Study-MySQL/&name=MySQL基础语句学习记录&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://xycg529.github.io/Quick-Study-MySQL/&t=MySQL基础语句学习记录"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">xycg529</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
     </div>
+    
+    
+  </span>
+</div>
 
     
-  </aside>
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        MySQL基础语句学习记录
+    </h1>
 
 
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">xycg529</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-09-07T08:23:57.000Z" class="dt-published" itemprop="datePublished">2024-09-07</time>
+        
+      
     </div>
 
-    <div class="main-inner post posts-expand">
 
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xycg529.github.io/Quick-Study-MySQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="xycg529">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NY's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="MySQL基础语句学习记录 | NY's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          MySQL基础语句学习记录
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-09-07 16:23:57 / 修改时间：16:36:10" itemprop="dateCreated datePublished" datetime="2024-09-07T16:23:57+08:00">2024-09-07</time>
-    </span>
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/MySQL/" rel="tag">MySQL</a>, <a class="p-category" href="/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a>
+    </div>
 
+
+    </div>
+  </header>
   
-</div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><p>来源：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1m84y1w7Tb">黑马程序员JavaWeb</a>中MySQL部分的讲解</p>
+  <div class="content e-content" itemprop="articleBody">
+    <p>来源：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1m84y1w7Tb">黑马程序员JavaWeb</a>中MySQL部分的讲解</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">create</span> <span class="keyword">table</span> tb_user</span><br><span class="line"># (</span><br><span class="line">#     id       <span class="type">int</span> comment <span class="string">&#x27;ID, 唯一标识&#x27;</span>,</span><br><span class="line">#     username <span class="type">varchar</span>(<span class="number">20</span>) comment <span class="string">&#x27;用户名&#x27;</span>,</span><br><span class="line">#     name     <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">#     age      <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">#     gender   <span class="type">char</span>(<span class="number">1</span>) comment <span class="string">&#x27;性别&#x27;</span></span><br><span class="line"># ) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line"># 建表语句</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_user</span><br><span class="line">(</span><br><span class="line">    id       <span class="type">int</span> <span class="keyword">primary</span> key auto_increment comment <span class="string">&#x27;ID, 唯一标识&#x27;</span>,</span><br><span class="line">    username <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">unique</span> comment <span class="string">&#x27;用户名&#x27;</span>,</span><br><span class="line">    name     <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    age      <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span>,</span><br><span class="line">    gender   <span class="type">char</span>(<span class="number">1</span>) <span class="keyword">default</span> <span class="string">&#x27;男&#x27;</span> comment <span class="string">&#x27;性别&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 查看所有存在表格</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"></span><br><span class="line"># 查看字段</span><br><span class="line"><span class="keyword">desc</span> tb_emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 添加字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">    <span class="keyword">add</span> qq <span class="type">varchar</span>(<span class="number">11</span>) comment <span class="string">&#x27;QQ&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 修改表中字段数据类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">    modify qq <span class="type">varchar</span>(<span class="number">13</span>) comment <span class="string">&#x27;QQ&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 修改表中的字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">    change qq qq_num <span class="type">varchar</span>(<span class="number">13</span>) comment <span class="string">&#x27;QQ&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 删除表中的字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">    <span class="keyword">drop</span> <span class="keyword">column</span> qq_num;</span><br><span class="line"></span><br><span class="line"># 改名</span><br><span class="line">rename <span class="keyword">table</span> tb_emp <span class="keyword">to</span> emp;</span><br><span class="line"></span><br><span class="line">rename <span class="keyword">table</span> emp <span class="keyword">to</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 若存在时，删除表格</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> tb_emp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 向表格中插入指定字段的数据</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_emp(username, name, gender, create_time, update_time)</span><br><span class="line"><span class="keyword">values</span> (<span class="string">&#x27;wuji&#x27;</span>, <span class="string">&#x27;zhangwuji&#x27;</span>, <span class="number">1</span>, now(), now());</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> tb_emp</span><br><span class="line"><span class="keyword">set</span> name<span class="operator">=</span><span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">    update_time<span class="operator">=</span>now()</span><br><span class="line"><span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"># 更新所有</span><br><span class="line"><span class="keyword">update</span> tb_emp</span><br><span class="line"><span class="keyword">set</span> entrydate<span class="operator">=</span><span class="string">&#x27;2010-01-01&#x27;</span>,</span><br><span class="line">    update_time<span class="operator">=</span>now();</span><br><span class="line"></span><br><span class="line"># 从表中删除id<span class="operator">=</span><span class="number">1</span>的项</span><br><span class="line"><span class="keyword">delete</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"># 从tb_emp表中查询name和entrydate字段</span><br><span class="line"><span class="keyword">select</span> name, entrydate</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 此方法查全部字段性能低不推荐</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 推荐使用查全部字段的方式</span><br><span class="line"><span class="keyword">select</span> id,</span><br><span class="line">       username,</span><br><span class="line">       password,</span><br><span class="line">       name,</span><br><span class="line">       gender,</span><br><span class="line">       image,</span><br><span class="line">       job,</span><br><span class="line">       entrydate,</span><br><span class="line">       create_time,</span><br><span class="line">       update_time</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 查询并起别名，<span class="keyword">as</span>可省略</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">as</span> 姓名, entrydate <span class="keyword">as</span> 入职日期</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 查询并去除重复</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> job</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 查询表中指定数据的项</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> id <span class="operator">&lt;=</span> <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> job <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> job <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"># <span class="operator">!=</span>可以用<span class="operator">&lt;&gt;</span>代替</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> password <span class="operator">!=</span> <span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> entrytime <span class="operator">&gt;=</span> <span class="string">&#x27;2000-01-01&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> entrydate <span class="operator">&lt;=</span> <span class="string">&#x27;2010-01-01&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 可以写成between...and...</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> entrytime <span class="keyword">between</span> <span class="string">&#x27;2000-01-01&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2010-01-01&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> entrytime <span class="keyword">between</span> <span class="string">&#x27;2000-01-01&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2010-01-01&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> gender <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> job <span class="operator">=</span> <span class="number">2</span></span><br><span class="line">   <span class="keyword">or</span> job <span class="operator">=</span> <span class="number">3</span></span><br><span class="line">   <span class="keyword">or</span> job <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"># 可以写成<span class="keyword">in</span>(...)</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> job <span class="keyword">in</span> (<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"># 查询名字是两个字的项</span><br><span class="line"># _ 匹配单个字符，这里匹配两个</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;__&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 查询姓氏张的项</span><br><span class="line"># <span class="operator">%</span> 匹配任意个字符</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;张%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 统计员工数量</span><br><span class="line"># 聚合函数不统计值为<span class="keyword">null</span></span><br><span class="line"></span><br><span class="line"># a. <span class="built_in">count</span>(字段)</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(id)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># b.<span class="built_in">count</span>(常量)</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># c.<span class="built_in">count</span>(<span class="operator">*</span>)，推荐，底层有优化</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 统计最早入职的</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">min</span>(entrydate)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 统计最迟入职的</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(entrydate)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 统计ID平均值</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(id)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 统计ID之和</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(id)</span><br><span class="line"><span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 根据性别分组，统计男女数量</span><br><span class="line"># <span class="keyword">select</span>的字段必须与<span class="keyword">group</span> <span class="keyword">by</span>一致，或有其他聚合函数，其他字段无意义且报错</span><br><span class="line"><span class="keyword">select</span> gender, <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查询入职在<span class="number">2015</span><span class="number">-01</span><span class="number">-01</span>以前的员工，并根据职位分组，统计员工数量<span class="operator">&gt;=</span><span class="number">2</span>的职位</span><br><span class="line"># <span class="keyword">where</span>不能判断聚合函数</span><br><span class="line"># <span class="keyword">having</span>用于分组后的过滤条件，可以判断聚合函数</span><br><span class="line"><span class="keyword">select</span> job, <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> entrydate <span class="operator">&lt;=</span> <span class="string">&#x27;2015-01-01&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> job</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">&gt;=</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"># 根据入职时间升序排序，<span class="keyword">asc</span>是默认，可省略</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> entrydate <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"># 降序</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> entrydate <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"># 先根据入职时间升序，若入职时间相同再按照更新时间降序</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> entrydate, update_time <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"># 从起始索引<span class="number">0</span>开始查，每页<span class="number">5</span>条</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line">limit <span class="number">0</span>,<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"># 查询第二页，每页<span class="number">5</span>条</span><br><span class="line"># 从第<span class="number">6</span>个开始，索引是<span class="number">5</span></span><br><span class="line"># 起始索引<span class="operator">=</span>(页码<span class="number">-1</span>)×页数</span><br><span class="line"># limit是方言，查第一页可省略起始索引</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line">limit <span class="number">5</span>,<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"># 查第一页，每页<span class="number">10</span>条，输入姓名（模糊）性别（精确）时间（范围）可搜索到信息，对修改时间倒序</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%张%&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> gender <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">and</span> entrydate</span><br><span class="line">    <span class="keyword">between</span> <span class="string">&#x27;2000-01-01&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2015-12-31&#x27;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> update_time <span class="keyword">desc</span></span><br><span class="line">limit <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 用if把<span class="number">1</span>变男，<span class="number">2</span>变女</span><br><span class="line"><span class="keyword">select</span> if(gender <span class="operator">=</span> <span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;女&#x27;</span>) 性别, <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> gender;</span><br><span class="line"></span><br><span class="line"># <span class="keyword">case</span>解决多分支</span><br><span class="line"><span class="keyword">select</span> (<span class="keyword">case</span> job</span><br><span class="line">            <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> <span class="string">&#x27;班主任&#x27;</span></span><br><span class="line">            <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> <span class="string">&#x27;讲师&#x27;</span></span><br><span class="line">            <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> <span class="string">&#x27;学工主管&#x27;</span></span><br><span class="line">            <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> <span class="string">&#x27;教研主管&#x27;</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">&#x27;未分配职位&#x27;</span></span><br><span class="line">    <span class="keyword">end</span>) 职位,</span><br><span class="line">       <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> job;</span><br><span class="line"></span><br><span class="line"># 多表设计</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">(</span><br><span class="line">    id          <span class="type">int</span> auto_increment</span><br><span class="line">        <span class="keyword">primary</span> key,</span><br><span class="line">    username    <span class="type">varchar</span>(<span class="number">20</span>)                       <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;用户名&#x27;</span>,</span><br><span class="line">    password    <span class="type">varchar</span>(<span class="number">32</span>)      <span class="keyword">default</span> <span class="string">&#x27;123456&#x27;</span> <span class="keyword">null</span> comment <span class="string">&#x27;密码&#x27;</span>,</span><br><span class="line">    name        <span class="type">varchar</span>(<span class="number">10</span>)                       <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    gender      tinyint unsigned <span class="keyword">default</span> <span class="string">&#x27;1&#x27;</span>      <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;性别：1男 2女&#x27;</span>,</span><br><span class="line">    image       <span class="type">varchar</span>(<span class="number">300</span>)                      <span class="keyword">null</span> comment <span class="string">&#x27;图像url&#x27;</span>,</span><br><span class="line">    job         tinyint unsigned                  <span class="keyword">null</span> comment <span class="string">&#x27;职位：1班主任 2讲师 3学生主管 4教研主管&#x27;</span>,</span><br><span class="line">    entrydate   <span class="type">date</span>                              <span class="keyword">null</span> comment <span class="string">&#x27;入职日期&#x27;</span>,</span><br><span class="line">    dept_id     <span class="type">int</span> unsigned                      <span class="keyword">null</span> comment <span class="string">&#x27;归属部门ID&#x27;</span>,</span><br><span class="line">    create_time datetime                          <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    update_time datetime                          <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">)</span><br><span class="line">    comment <span class="string">&#x27;员工表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_dept</span><br><span class="line">(</span><br><span class="line">    id          <span class="type">int</span> unsigned <span class="keyword">primary</span> key auto_increment comment <span class="string">&#x27;ID&#x27;</span>,</span><br><span class="line">    name        <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">unique</span> comment <span class="string">&#x27;部门名称&#x27;</span>,</span><br><span class="line">    create_time datetime    <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">    update_time datetime    <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;修改时间&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;部门表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 使用物理外键建立关联，将tb_emp的dept_id<span class="operator">-</span><span class="operator">&gt;</span>tb_dept的id</span><br><span class="line"># 增删改时要检查外键关系</span><br><span class="line"># 仅用于单节点场景，不适用于分布式、集群</span><br><span class="line"># 容易引发死锁消耗性能</span><br><span class="line"># 在业务层逻辑中使用逻辑外键可解决上述问题</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_emp</span><br><span class="line">    <span class="keyword">add</span> <span class="keyword">constraint</span> tb_emp___fk_dept_id</span><br><span class="line">        <span class="keyword">foreign</span> key (dept_id) <span class="keyword">references</span> tb_dept (id);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 一对一</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_user</span><br><span class="line">(</span><br><span class="line">    id     <span class="type">int</span> unsigned <span class="keyword">primary</span> key auto_increment comment <span class="string">&#x27;ID&#x27;</span>,</span><br><span class="line">    name   <span class="type">varchar</span>(<span class="number">10</span>)      <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    gender tinyint unsigned <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;性别：1男2女&#x27;</span>,</span><br><span class="line">    phone  <span class="type">char</span>(<span class="number">11</span>) comment <span class="string">&#x27;手机号&#x27;</span>,</span><br><span class="line">    degree <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;学历&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户信息表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_user</span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;白眉&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;18812340001&#x27;</span>, <span class="string">&#x27;初中&#x27;</span>),</span><br><span class="line">       (<span class="number">2</span>, <span class="string">&#x27;青翼&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;18812340002&#x27;</span>, <span class="string">&#x27;大专&#x27;</span>),</span><br><span class="line">       (<span class="number">3</span>, <span class="string">&#x27;金毛&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;18812340003&#x27;</span>, <span class="string">&#x27;初中&#x27;</span>),</span><br><span class="line">       (<span class="number">4</span>, <span class="string">&#x27;紫衫&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;18812340004&#x27;</span>, <span class="string">&#x27;硕士&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_user_card</span><br><span class="line">(</span><br><span class="line">    id           <span class="type">int</span> unsigned <span class="keyword">primary</span> key auto_increment comment <span class="string">&#x27;ID&#x27;</span>,</span><br><span class="line">    nationality  <span class="type">varchar</span>(<span class="number">10</span>)  <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;民族&#x27;</span>,</span><br><span class="line">    birthday     <span class="type">date</span>         <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;生日&#x27;</span>,</span><br><span class="line">    idcard       <span class="type">char</span>(<span class="number">18</span>)     <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;身份证号&#x27;</span>,</span><br><span class="line">    issued       <span class="type">varchar</span>(<span class="number">20</span>)  <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;签发机关&#x27;</span>,</span><br><span class="line">    expire_begin <span class="type">date</span>         <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;有效期-开始&#x27;</span>,</span><br><span class="line">    expire_end   <span class="type">date</span> comment <span class="string">&#x27;有效期-结束&#x27;</span>,</span><br><span class="line">    user_id      <span class="type">int</span> unsigned <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">unique</span> comment <span class="string">&#x27;用户ID&#x27;</span>,</span><br><span class="line">    <span class="keyword">constraint</span> fk_user_id <span class="keyword">foreign</span> key (user_id) <span class="keyword">references</span> tb_user (id)</span><br><span class="line">) comment <span class="string">&#x27;用户信息表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_user_card</span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;汉&#x27;</span>, <span class="string">&#x27;1960-11-06&#x27;</span>, <span class="string">&#x27;100000100000100001&#x27;</span>, <span class="string">&#x27;朝阳区&#x27;</span>, <span class="string">&#x27;2000-06-10&#x27;</span>, <span class="keyword">null</span>, <span class="number">1</span>),</span><br><span class="line">       (<span class="number">2</span>, <span class="string">&#x27;汉&#x27;</span>, <span class="string">&#x27;1971-11-06&#x27;</span>, <span class="string">&#x27;100000100000100002&#x27;</span>, <span class="string">&#x27;静安区&#x27;</span>, <span class="string">&#x27;2005-06-10&#x27;</span>, <span class="string">&#x27;2025-06-10&#x27;</span>, <span class="number">2</span>),</span><br><span class="line">       (<span class="number">3</span>, <span class="string">&#x27;汉&#x27;</span>, <span class="string">&#x27;1963-11-06&#x27;</span>, <span class="string">&#x27;100000100000100003&#x27;</span>, <span class="string">&#x27;昌平区&#x27;</span>, <span class="string">&#x27;2006-06-10&#x27;</span>, <span class="keyword">null</span>, <span class="number">3</span>),</span><br><span class="line">       (<span class="number">4</span>, <span class="string">&#x27;回&#x27;</span>, <span class="string">&#x27;1980-11-06&#x27;</span>, <span class="string">&#x27;100000100000100004&#x27;</span>, <span class="string">&#x27;海淀区&#x27;</span>, <span class="string">&#x27;2008-06-10&#x27;</span>, <span class="string">&#x27;2028-06-10&#x27;</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 使用第三张中间表实现多对多的关系</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_student</span><br><span class="line">(</span><br><span class="line">    id   <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    <span class="keyword">no</span>   <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;学号&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;学生表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_student(name, <span class="keyword">no</span>)</span><br><span class="line"><span class="keyword">values</span> (<span class="string">&#x27;黛绮丝&#x27;</span>, <span class="string">&#x27;2000100101&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;谢逊&#x27;</span>, <span class="string">&#x27;2000100102&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;殷天正&#x27;</span>, <span class="string">&#x27;2000100103&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;韦一笑&#x27;</span>, <span class="string">&#x27;2000100104&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_course</span><br><span class="line">(</span><br><span class="line">    id   <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">10</span>) comment <span class="string">&#x27;课程名称&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;课程表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_course (name)</span><br><span class="line"><span class="keyword">values</span> (<span class="string">&#x27;Java&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;PHP&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;MySQL&#x27;</span>),</span><br><span class="line">       (<span class="string">&#x27;Hadoop&#x27;</span>);</span><br><span class="line"></span><br><span class="line"># 中间表</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_student_course</span><br><span class="line">(</span><br><span class="line">    id         <span class="type">int</span> auto_increment <span class="keyword">primary</span> key comment <span class="string">&#x27;主键&#x27;</span>,</span><br><span class="line">    student_id <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;学生ID&#x27;</span>,</span><br><span class="line">    course_id  <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span> comment <span class="string">&#x27;课程ID&#x27;</span>,</span><br><span class="line">    <span class="keyword">constraint</span> fk_courseid <span class="keyword">foreign</span> key (course_id) <span class="keyword">references</span> tb_course (id),</span><br><span class="line">    <span class="keyword">constraint</span> fk_studentid <span class="keyword">foreign</span> key (student_id) <span class="keyword">references</span> tb_student (id)</span><br><span class="line">) comment <span class="string">&#x27;学生课程中间表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_student_course(student_id, course_id)</span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">       (<span class="number">1</span>, <span class="number">2</span>),</span><br><span class="line">       (<span class="number">1</span>, <span class="number">3</span>),</span><br><span class="line">       (<span class="number">2</span>, <span class="number">2</span>),</span><br><span class="line">       (<span class="number">2</span>, <span class="number">3</span>),</span><br><span class="line">       (<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"># 多表查询</span><br><span class="line"># 笛卡尔积产生无效冗余数据</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp,</span><br><span class="line">     tb_dept;</span><br><span class="line"></span><br><span class="line"># 消除笛卡尔积，获得正确数据</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp,</span><br><span class="line">     tb_dept</span><br><span class="line"><span class="keyword">where</span> tb_dept.id <span class="operator">=</span> tb_emp.id;</span><br><span class="line"></span><br><span class="line"># 查询姓名及部门名</span><br><span class="line"># 隐式内连接</span><br><span class="line"><span class="keyword">select</span> tb_emp.name, tb_dept.name</span><br><span class="line"><span class="keyword">from</span> tb_dept,</span><br><span class="line">     tb_emp</span><br><span class="line"><span class="keyword">where</span> tb_emp.dept_id <span class="operator">=</span> tb_dept.id;</span><br><span class="line"></span><br><span class="line"># 显式内连接</span><br><span class="line"><span class="keyword">select</span> tb_emp.name, tb_dept.name</span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> tb_dept <span class="keyword">on</span> tb_dept.id <span class="operator">=</span> tb_emp.dept_id;</span><br><span class="line"></span><br><span class="line"># 起别名</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp e,</span><br><span class="line">     tb_dept d</span><br><span class="line"><span class="keyword">where</span> e.dept_id <span class="operator">=</span> d.id;</span><br><span class="line"></span><br><span class="line"># 查询所有姓名及部门名</span><br><span class="line"># 左外连接，完全包含左表数据</span><br><span class="line"><span class="keyword">select</span> e.name, d.name</span><br><span class="line"><span class="keyword">from</span> tb_emp e</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> tb_dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br><span class="line"></span><br><span class="line"># 查询所有部门名及姓名</span><br><span class="line"># 右外连接，完全包含右表数据</span><br><span class="line"><span class="keyword">select</span> e.name, d.name</span><br><span class="line"><span class="keyword">from</span> tb_emp e</span><br><span class="line">         <span class="keyword">right</span> <span class="keyword">join</span> tb_dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br><span class="line"># 可以转换成左外连接，对调表名位置即可</span><br><span class="line"><span class="keyword">select</span> e.name, d.name</span><br><span class="line"><span class="keyword">from</span> tb_dept d</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> tb_emp e <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br><span class="line"></span><br><span class="line"># 嵌套查询</span><br><span class="line"># 标量子查询，查询教研部所有员工</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> tb_dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;教研部&#x27;</span>);</span><br><span class="line"></span><br><span class="line"># 查询张三入职后的员工信息</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> entrydate <span class="operator">&gt;</span> (<span class="keyword">select</span> entrydate <span class="keyword">from</span> tb_emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>);</span><br><span class="line"></span><br><span class="line"># 列子查询</span><br><span class="line"># 查询教研部及咨询部的所有员工</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> dept_id <span class="keyword">in</span> (<span class="keyword">select</span> id <span class="keyword">from</span> tb_dept <span class="keyword">where</span> name <span class="keyword">in</span> (<span class="string">&#x27;教研部&#x27;</span>, <span class="string">&#x27;咨询部&#x27;</span>));</span><br><span class="line"></span><br><span class="line"># 行子查询</span><br><span class="line"># 查询与李四的入职日期和职位都相同的员工</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> tb_emp</span><br><span class="line"><span class="keyword">where</span> (entrydate, job) <span class="operator">=</span> (<span class="keyword">select</span> entrydate, job <span class="keyword">from</span> tb_emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>);</span><br><span class="line"></span><br><span class="line"># 表子查询</span><br><span class="line"># 查询入职日期是<span class="number">2008</span><span class="number">-02</span><span class="number">-02</span>之后的员工及部门名称</span><br><span class="line"><span class="keyword">select</span> e.<span class="operator">*</span>, d.name</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tb_emp <span class="keyword">where</span> entrydate <span class="operator">&gt;</span> <span class="string">&#x27;2008-02-02&#x27;</span>) e,</span><br><span class="line">     tb_dept d</span><br><span class="line"><span class="keyword">where</span> e.dept_id <span class="operator">=</span> d.id;</span><br><span class="line"></span><br><span class="line"># 查询价格<span class="operator">&lt;</span><span class="number">10</span>的菜品名称，价格及分类名称</span><br><span class="line"><span class="keyword">select</span> d.name, d.price, c.name</span><br><span class="line"><span class="keyword">from</span> dish d,</span><br><span class="line">     category c</span><br><span class="line"><span class="keyword">where</span> d.category_id <span class="operator">=</span> c.id</span><br><span class="line">  <span class="keyword">and</span> d.price <span class="operator">&lt;</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"># 查询价格<span class="number">10</span><span class="operator">~</span><span class="number">50</span>且在售的菜品，展示其名称，价格，分类（包括<span class="keyword">null</span>）</span><br><span class="line"><span class="keyword">select</span> d.name, d.price, c.name</span><br><span class="line"><span class="keyword">from</span> dish d</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> category c <span class="keyword">on</span> d.category_id <span class="operator">=</span> c.id</span><br><span class="line"><span class="keyword">where</span> d.price <span class="keyword">between</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">50</span></span><br><span class="line">  <span class="keyword">and</span> d.status <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"># 查询各分类下最贵菜品，展示分类，价格</span><br><span class="line"><span class="keyword">select</span> c.name, <span class="built_in">max</span>(d.price)</span><br><span class="line"><span class="keyword">from</span> dish d,</span><br><span class="line">     category c</span><br><span class="line"><span class="keyword">where</span> d.category_id <span class="operator">=</span> c.id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> c.name;</span><br><span class="line"></span><br><span class="line"># 查询各分类下在售并且份数<span class="operator">&gt;</span><span class="number">3</span>的菜品分类名称</span><br><span class="line"><span class="keyword">select</span> c.name, <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">from</span> dish d,</span><br><span class="line">     category c</span><br><span class="line"><span class="keyword">where</span> d.category_id <span class="operator">=</span> c.id</span><br><span class="line">  <span class="keyword">and</span> d.status <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> c.name</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">&gt;=</span> <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"># 查询商务套餐A有哪些菜品，展示套餐名称，价格、菜品名称，价格，份数</span><br><span class="line"><span class="keyword">select</span> s.name, s.price, d.name, d.price, sd.copies</span><br><span class="line"><span class="keyword">from</span> setmeal_dish sd,</span><br><span class="line">     dish d,</span><br><span class="line">     setmeal s</span><br><span class="line"><span class="keyword">where</span> sd.setmeal_id <span class="operator">=</span> s.id</span><br><span class="line">  <span class="keyword">and</span> sd.dish_id <span class="operator">=</span> d.id</span><br><span class="line">  <span class="keyword">and</span> s.name <span class="operator">=</span> <span class="string">&#x27;商务套餐A&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 查询低于平均价格的菜品名称，价格</span><br><span class="line"><span class="keyword">select</span> name, price <span class="keyword">from</span> dish <span class="keyword">where</span> price <span class="operator">&lt;</span> (<span class="keyword">select</span> <span class="built_in">avg</span>(price) <span class="keyword">from</span> dish);</span><br><span class="line"></span><br><span class="line"># 开启事务</span><br><span class="line"># 事务内的操作要么同时成功要么同时失败</span><br><span class="line"><span class="keyword">start</span> transaction;</span><br><span class="line"></span><br><span class="line"># 删除部门</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_dept <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"># 删除员工</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tb_emp <span class="keyword">where</span> dept_id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"># 提交事务</span><br><span class="line"># 提交事务之前，虽然<span class="keyword">select</span>查看已经发生删除，但实际上数据仍然存在</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"># 提交之后才会真正改变</span><br><span class="line"></span><br><span class="line"># 回滚事务</span><br><span class="line"># 回退到开始事务前的状态</span><br><span class="line"><span class="keyword">rollback</span>;</span><br><span class="line"></span><br><span class="line"># 创建索引，在大量数据的情况下加快查找该字段下数据的速度</span><br><span class="line"># 没有索引时，如果字段项不唯一要全表扫描</span><br><span class="line"># 有索引时（有助于搜索的数据结构，默认B<span class="operator">+</span>树）遍历索引结构即可</span><br><span class="line"># 索引会占用存储空间，降低增删改的效率</span><br><span class="line"><span class="keyword">create</span> index idx_tb_emp_id <span class="keyword">on</span> tb_emp(id);</span><br><span class="line"></span><br><span class="line"># 查看索引</span><br><span class="line"><span class="keyword">show</span> index <span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 删除索引</span><br><span class="line"><span class="keyword">drop</span> index idx_tb_emp_id <span class="keyword">on</span> tb_emp;</span><br><span class="line"></span><br><span class="line"># 主键字段在建表时自动创建索引，主键索引效率最高</span><br><span class="line"># 字段添加<span class="keyword">unique</span>时会添加唯一索引</span><br></pre></td></tr></table></figure>
 
 
 
 
-    </div>
+  </div>
+</article>
 
-    
-    
-    
 
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
-              <a href="/tags/%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 开发</a>
-          </div>
 
         
+          <div id="footer-post-container">
+  <div id="footer-post">
 
-    </footer>
-  </article>
-</div>
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
 
+    
+    
 
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xycg529.github.io/Quick-Study-MySQL/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xycg529.github.io/Quick-Study-MySQL/&text=MySQL基础语句学习记录"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xycg529.github.io/Quick-Study-MySQL/&is_video=false&description=MySQL基础语句学习记录"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL基础语句学习记录&body=Check out this article: http://xycg529.github.io/Quick-Study-MySQL/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xycg529.github.io/Quick-Study-MySQL/&title=MySQL基础语句学习记录"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xycg529.github.io/Quick-Study-MySQL/&name=MySQL基础语句学习记录&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://xycg529.github.io/Quick-Study-MySQL/&t=MySQL基础语句学习记录"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
 
     </div>
-  </footer>
 
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
   </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024
+    xycg529
   </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+    </div>
+    <!-- styles -->
 
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
   
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
-  
+<!-- Baidu Analytics -->
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+<!-- Cloudflare Analytics -->
 
+<!-- Disqus Comments -->
 
+<!-- utterances Comments -->
 
 </body>
 </html>
